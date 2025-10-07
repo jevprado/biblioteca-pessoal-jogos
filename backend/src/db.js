@@ -12,12 +12,12 @@ const User = sequelize.define('User', {
   email: { type: DataTypes.STRING, allowNull: false, unique: true },
 });
 
+//banco de dados do campo de adição de jogos
 const Game = sequelize.define('Game', {
-  title: { type: DataTypes.STRING, allowNull: false },
-  platform: { type: DataTypes.STRING, allowNull: false }, // ex: PC, PS5, Switch
+  title: { type: DataTypes.STRING, allowNull: false }, //o false é para ser obrigatório
+  platform: { type: DataTypes.STRING, allowNull: false }, //o false é para ser obrigatório || ex: PC, PS5, Switch, steam
   developer: { type: DataTypes.STRING },
   releaseYear: { type: DataTypes.INTEGER },
-  coverUrl: { type: DataTypes.STRING },
 });
 
 const Library = sequelize.define('Library', {

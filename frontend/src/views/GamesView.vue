@@ -14,13 +14,12 @@ const loadGames = async () => {
 };
 
 const addGame = async () => {
-  if (!form.value.title || !form.value.platform) return;
+  if (!form.value.title || !form.value.platform) return; /*campos obrigatórios*/
   await api.post('/games', {
     title: form.value.title,
     platform: form.value.platform,
     developer: form.value.developer || null,
     releaseYear: form.value.releaseYear ? Number(form.value.releaseYear) : null,
-    coverUrl: form.value.coverUrl || null,
   });
   form.value = { title: '', platform: '', developer: '', releaseYear: '', coverUrl: '' };
   await loadGames();
@@ -38,7 +37,6 @@ onMounted(loadGames);
       <input v-model="form.platform" placeholder="Plataforma" required />
       <input v-model="form.developer" placeholder="Desenvolvedora" />
       <input v-model="form.releaseYear" placeholder="Ano" type="number" />
-      <input v-model="form.coverUrl" placeholder="URL da capa" />
       <button type="submit">Adicionar</button>
     </form>
 
