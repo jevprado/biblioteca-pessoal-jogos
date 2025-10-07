@@ -43,8 +43,10 @@ onMounted(loadGames);
     <div v-if="loading">Carregando...</div>
     <ul v-else>
       <li v-for="g in games" :key="g.id">
-        <strong>{{ g.title }}</strong> — {{ g.platform }}
-        <span v-if="g.releaseYear"> ({{ g.releaseYear }})</span>
+        <router-link :to="`/games/${g.id}`" style="text-decoration: none; color: inherit;">
+          <strong>{{ g.title }}</strong> — {{ g.platform }}
+          <span v-if="g.releaseYear"> ({{ g.releaseYear }})</span>
+        </router-link>
       </li>
     </ul>
   </div>
