@@ -1,0 +1,23 @@
+.page {
+  padding: 12px;
+  background-color: rgb(72, 255, 0);
+}
+
+.welcome-title {
+  text-align: center;
+}
+
+.welcome-image {
+  max-height: 500px;
+  border-radius: 2%;
+  display: block;
+  margin: 0 auto;
+}
+
+.btn-biblioteca {
+  padding: 12px;
+  height: 10px;
+  border-radius: 100px;
+}
+
+

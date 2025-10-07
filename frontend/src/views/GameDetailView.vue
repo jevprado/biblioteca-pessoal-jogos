@@ -43,7 +43,7 @@ onMounted(loadGame);
 </template>
 
 <style scoped>
-.page { padding: 16px; }
+.page { padding: 12px; }
 </style>
 
 
