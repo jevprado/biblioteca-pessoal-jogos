@@ -16,6 +16,8 @@ const error = ref('');
   <div class="page">
     <h1 class="welcome-title">Bem-vindo à sua BIBLIOTECA DE JOGOS DIGITAIS</h1>
     <img :src="capaTeste" alt="Capa" class="welcome-image" />
+  </div>
+  <div class="container-btn">
     <button @click="router.back()" class="btn-biblioteca">Acessar sua biblioteca</button>
   </div>
   

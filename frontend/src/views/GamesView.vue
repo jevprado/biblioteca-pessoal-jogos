@@ -34,7 +34,17 @@ onMounted(loadGames);
 
     <form @submit.prevent="addGame" style="margin-bottom: 16px;">
       <input v-model="form.title" placeholder="Título" required />
-      <input v-model="form.platform" placeholder="Plataforma" required />
+
+      <select v-model="form.platform" required>
+        <option value="" disabled selected>Selecione a plataforma</option>
+        <option value="Steam">Steam</option>
+        <option value="Xbox PC">Xbox PC</option>
+        <option value="Epic Games">Epic Games</option>
+        <option value="Steam">Steam</option>
+        <option value="GOG">GOG</option>
+        <option value="Amazon Prime">Amazon Prime</option>
+      </select>
+
       <input v-model="form.developer" placeholder="Desenvolvedora" />
       <input v-model="form.releaseYear" placeholder="Ano" type="number" />
       <button type="submit">Adicionar</button>
