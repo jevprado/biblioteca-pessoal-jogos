@@ -29,10 +29,28 @@ onMounted(loadGames);
 </script>
 
 <template>
-  <div class="view-page">
+  <div class="page">
     <h1>Jogos</h1>
-    <div v-if="loading">Carregando...</div>
 
+    <form @submit.prevent="addGame" style="margin-bottom: 16px;">
+      <input v-model="form.title" placeholder="Título" required />
+
+      <select v-model="form.platform" required>
+        <option value="" disabled selected>Selecione a plataforma</option>
+        <option value="Steam">Steam</option>
+        <option value="Xbox PC">Xbox PC</option>
+        <option value="Epic Games">Epic Games</option>
+        <option value="Steam">Steam</option>
+        <option value="GOG">GOG</option>
+        <option value="Amazon Prime">Amazon Prime</option>
+      </select>
+
+      <input v-model="form.developer" placeholder="Desenvolvedora" />
+      <input v-model="form.releaseYear" placeholder="Ano" type="number" />
+      <button type="submit">Adicionar</button>
+    </form>
+
+    <div v-if="loading">Carregando...</div>
     <ul v-else>
       <li v-for="g in games" :key="g.id">
         <router-link :to="`/games/${g.id}`" style="text-decoration: none; color: inherit;">
@@ -42,10 +60,9 @@ onMounted(loadGames);
       </li>
     </ul>
   </div>
-
-    <div class="container-btn">
-      <button @click="router.back()" class="btn-biblioteca-add">Acessar sua biblioteca</button>
-    </div>
 </template>
 
-<style src="./GamesView.css" scoped></style>
+<style scoped>
+.page { padding: 16px; }
+input { margin-right: 8px; margin-bottom: 8px; }
+</style>
