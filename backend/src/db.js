@@ -15,7 +15,17 @@ const User = sequelize.define('User', {
 //banco de dados do campo de adição de jogos
 const Game = sequelize.define('Game', {
   title: { type: DataTypes.STRING, allowNull: false }, //o false é para ser obrigatório
-  platform: { type: DataTypes.STRING, allowNull: false }, //o false é para ser obrigatório || ex: PC, PS5, Switch, steam
+  //restrição importante: validade não permite que o usuário insira uma plataforma diferente das permitidas em caso de erro no frontend
+  platform: {
+  type: DataTypes.STRING,
+  allowNull: false,
+  validate: {
+    isIn: {
+      args: [['Steam', 'Xbox PC', 'Epic Games', 'GOG', 'Amazon Prime']],
+      msg: 'Plataforma inválida. Escolha uma das opções permitidas.'
+    }
+  }
+}, 
   developer: { type: DataTypes.STRING },
   releaseYear: { type: DataTypes.INTEGER },
 });
