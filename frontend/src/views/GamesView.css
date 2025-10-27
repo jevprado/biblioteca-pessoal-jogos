@@ -7,10 +7,13 @@
     margin: 20px 0;
     display: flex;
     justify-content: center;
+    gap: 12px;
+    align-items: center;
 }
 
+/*search box*/
 .search-input {
-    width: 100%;
+    flex: 1;
     max-width: 800px;
     padding: 12px 16px;
     border: 2px solid #ddd;
@@ -21,6 +24,22 @@
 .search-input:focus {
     border-color: #8c00ff;
     box-shadow: 0 0 0 3px rgba(255, 115, 0, 0.1);
+}
+
+/*botão de adicionar jogos*/
+.add-games-btn {
+  background-color: #ff7300; /* azul */
+  color: white;              /* texto branco */
+  border: none;              /* sem borda */
+  padding: 10px 300px;        /* espaço interno */
+  border-radius: 8px;        /* cantos arredondados */
+  cursor: pointer;           /* muda o cursor ao passar o mouse */
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.add-games-btn {
+  background-color: #ec4300; /* escurece ao passar o mouse */
 }
 
 .no-results {
@@ -38,7 +57,6 @@
     list-style:none;
     /*tamanhoigual ao search-input*/
     max-width: 800px;
-    padding: 12px 16px;
 
     max-height: 345px; /*tamanho da lista verticalmente*/
     overflow-y: auto;
@@ -59,23 +77,3 @@
     border-bottom: 1px solid #171717; /* separador entre itens */
   }
   
-
-
-
-.btn-biblioteca-add {
-  background-color: #ff7300; /* azul */
-  color: white;              /* texto branco */
-  border: none;              /* sem borda */
-  padding: 10px 20px;        /* espaço interno */
-  border-radius: 8px;        /* cantos arredondados */
-  cursor: pointer;           /* muda o cursor ao passar o mouse */
-  font-size: 16px;
-  
-  /*centralizar o botão*/
-  display: block;
-  margin: 100px;
-}
-
-.btn-biblioteca:hover {
-  background-color: #b3a700; /* escurece ao passar o mouse */
-}

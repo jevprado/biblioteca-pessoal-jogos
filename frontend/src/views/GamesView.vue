@@ -7,6 +7,7 @@ const loading = ref(false);
 const searchQuery = ref('');
 const form = ref({ title: '', platform: '', developer: '', releaseYear: '', coverUrl: '' });
 
+
 const loadGames = async () => {
   loading.value = true;
   const { data } = await api.get('/games');
@@ -57,8 +58,15 @@ onMounted(loadGames);
         class="search-input"
       />
     </div>
+
+    <div class="container-btnAdd">
+      <RouterLink :to="{ name: 'library' }" class="add-games-btn">
+        Adicionar Jogos
+      </RouterLink>
+    </div>
     
     <div v-if="loading">Carregando...</div>
+
 
     <ul v-else class="games-list">
       <li v-for="g in filteredGames" :key="g.id">
@@ -74,10 +82,7 @@ onMounted(loadGames);
       Nenhum jogo encontrado para "{{ searchQuery }}"
     </div>
   </div>
-
-    <div class="container-btn">
-      <button @click="router.back()" class="btn-biblioteca-add">Acessar sua biblioteca</button>
-    </div>
+    
 </template>
 
 <style src="./GamesView.css" scoped></style>

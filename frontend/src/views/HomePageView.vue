@@ -18,7 +18,9 @@ const error = ref('');
     <img :src="capaTeste" alt="Capa" class="welcome-image" />
   </div>
   <div class="container-btn">
-    <button @click="router.back()" class="btn-biblioteca">Acessar sua biblioteca</button>
+    <RouterLink :to="{ name: 'games' }" class="btn-biblioteca">
+      Acessar sua biblioteca
+    </RouterLink>
   </div>
   
 </template>
